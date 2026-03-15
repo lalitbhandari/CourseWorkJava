@@ -1,4 +1,5 @@
-package CourseWork;
+package CourseWork.courseWork;
+
 
 
 /**
@@ -7,19 +8,21 @@ package CourseWork;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class AIModule
+// parent class
+public class AiModule
 {
     private String modelName;
     private double price;
     private int parameterCount;
     private String contextWindow;
     
-    public AIModule(String modelName, double price, int parameterCount, String contextWindow){
+    public AiModule(String modelName, double price, int parameterCount, String contextWindow){
         this.modelName = modelName;
         this.price = price;
         this.parameterCount = parameterCount;
         this.contextWindow = contextWindow;
     }
+    // gatter setter method
     public String getModelName(){
         return modelName;
     }
@@ -44,6 +47,7 @@ public class AIModule
     public void setContextWindow( String newContextWindow){
         this.contextWindow = newContextWindow;
     }
+    // toString method 
     @Override
     public  String toString(){
         return  "Model Name: " + modelName + "\n" +

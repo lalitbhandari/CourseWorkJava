@@ -1,4 +1,4 @@
-package CourseWork;
+package CourseWork.courseWork;
 
 
 /**
@@ -7,27 +7,35 @@ package CourseWork;
  * @author (your name)
  * @version (a version number or a date)
  */
-public class personalPlan extends AIModule
-{
+
+// Child Classes
+public class personalPlan extends AiModule {
     int remainingPrompts;
-    public personalPlan(String modelName, double price, int parameterCount, 
-    String contextWindow, int remainingPrompts){
+
+    public personalPlan(String modelName, double price, int parameterCount, String contextWindow, int remainingPrompts){
         super(modelName, price, parameterCount, contextWindow);
-        this.remainingPrompts =remainingPrompts;
+        this.remainingPrompts = remainingPrompts;
     }
+
+    // getter setter method
     public int getRemainingPrompts(){
         return remainingPrompts;
     }
+
     public void setRemainingPrompts(int newRemainingPrompts){
-        this.remainingPrompts= newRemainingPrompts;
+        this.remainingPrompts = newRemainingPrompts;
     }
+
+    // PersonalPlan User can purchasePrompt when prompts is Zero
     public String purchasePrompts(int prompts){
-        if(prompts<0){
-            return"Error: You must enter a positive value or upgrade to Pro Plan.";
+        if(prompts < 0){
+            return "Error: You must enter a positive value or upgrade to Pro Plan.";
         }
         remainingPrompts += prompts;
-         return "Successfully added " + prompts + " prompts. New quota: " + remainingPrompts;
+        return "Successfully added " + prompts + " prompts. New quota: " + remainingPrompts;
     }
+
+    // for prompt text
     public String enterPrompt(String promptText, int tokenLength) {
         if (remainingPrompts > 0) {
             remainingPrompts--;
@@ -39,11 +47,12 @@ public class personalPlan extends AIModule
             return "Error: Monthly prompt limit reached. Please purchase additional prompts or upgrade to Pro Plan.";
         }
     }
-      @Override
+
+    // toString method
+    @Override
     public String toString() {
         return super.toString() + "\n" +
                "Plan Type: Personal Plan\n" +
                "Remaining Prompts: " + remainingPrompts;
     }
-    
 }
