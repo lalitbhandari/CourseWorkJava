@@ -1,71 +1,59 @@
 package CourseWork;
 
-/**
- * Parent Class: AIModule
- * Represents an AI model with pricing and specifications.
- */
-public class AiModule {
 
+
+/**
+ * Write a description of class AIModule here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
+ */
+// parent class
+public class AiModule
+{
     private String modelName;
     private double price;
     private int parameterCount;
     private String contextWindow;
-
-    // Constructor
-    public AiModule(String modelName, double price, int parameterCount, String contextWindow) {
-        setModelName(modelName);
-        setPrice(price);
-        setParameterCount(parameterCount);
-        setContextWindow(contextWindow);
+    
+    public AiModule(String modelName, double price, int parameterCount, String contextWindow){
+        this.modelName = modelName;
+        this.price = price;
+        this.parameterCount = parameterCount;
+        this.contextWindow = contextWindow;
     }
-
-    // Getters and Setters with validation
-    public String getModelName() {
+    // gatter setter method
+    public String getModelName(){
         return modelName;
     }
-
-    public void setModelName(String newModelName) {
-        if (newModelName != null && !newModelName.isEmpty()) {
-            this.modelName = newModelName;
-        }
+    public void setModelName(String newModelName){
+        this.modelName =newModelName;
     }
-
-    public double getPrice() {
+    public double getPrice(){
         return price;
     }
-
-    public void setPrice(double newPrice) {
-        if (newPrice >= 0) {
-            this.price = newPrice;
-        }
+    public void setPrice(double newPrice){
+        this.price = newPrice;
     }
-
-    public int getParameterCount() {
+    public int getParameterCount(){
         return parameterCount;
     }
-
-    public void setParameterCount(int newParameterCount) {
-        if (newParameterCount >= 0) {
-            this.parameterCount = newParameterCount;
-        }
+    public void setParameterCount(int newParameterCount){
+        this.parameterCount =newParameterCount;
     }
-
-    public String getContextWindow() {
+    public String getContextWindow(){
         return contextWindow;
     }
-
-    public void setContextWindow(String newContextWindow) {
-        if (newContextWindow != null && !newContextWindow.isEmpty()) {
-            this.contextWindow = newContextWindow;
-        }
+    public void setContextWindow( String newContextWindow){
+        this.contextWindow = newContextWindow;
     }
-
-    // toString method
+    // toString method 
     @Override
-    public String toString() {
-        return "Model Name: " + modelName + "\n" +
-               String.format("Price: NPR %.2f per 1 Lakh tokens\n", price) +
+    public  String toString(){
+        return  "Model Name: " + modelName + "\n" +
+               "Price: NPR " + price + " per 1 Lakh tokens\n" +
                "Parameters: " + parameterCount + " billion\n" +
                "Context Window: " + contextWindow + " tokens";
+    
     }
 }

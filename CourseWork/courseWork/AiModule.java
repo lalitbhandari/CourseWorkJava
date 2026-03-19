@@ -1,7 +1,5 @@
 package CourseWork.courseWork;
 
-
-
 /**
  * Write a description of class AIModule here.
  *

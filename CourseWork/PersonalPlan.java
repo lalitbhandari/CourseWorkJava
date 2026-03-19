@@ -1,47 +1,42 @@
 package CourseWork;
+
+
 /**
- * Child Class: PersonalPlan
- * User plan with limited monthly prompts.
+ * Write a description of class personalPlan here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
  */
-class PersonalPlan extends AiModule {
 
-    private int remainingPrompts;
+// Child Classes
+public class PersonalPlan extends AiModule {
+    int remainingPrompts;
 
-    public PersonalPlan(String modelName, double price, int parameterCount, String contextWindow, int remainingPrompts) {
+    public PersonalPlan(String modelName, double price, int parameterCount, String contextWindow, int remainingPrompts){
         super(modelName, price, parameterCount, contextWindow);
         this.remainingPrompts = remainingPrompts;
     }
 
-    // Getter and Setter
-    public int getRemainingPrompts() {
+    // getter setter method
+    public int getRemainingPrompts(){
         return remainingPrompts;
     }
 
-    public void setRemainingPrompts(int newRemainingPrompts) {
-        if (newRemainingPrompts >= 0) {
-            this.remainingPrompts = newRemainingPrompts;
-        }
+    public void setRemainingPrompts(int newRemainingPrompts){
+        this.remainingPrompts = newRemainingPrompts;
     }
 
-    // Purchase more prompts
-    public String purchasePrompts(int prompts) {
-        if (prompts <= 0) {
+    // PersonalPlan User can purchasePrompt when prompts is Zero
+    public String purchasePrompts(int prompts){
+        if(prompts < 0){
             return "Error: You must enter a positive value or upgrade to Pro Plan.";
         }
         remainingPrompts += prompts;
         return "Successfully added " + prompts + " prompts. New quota: " + remainingPrompts;
     }
 
-    // Enter a prompt
+    // for prompt text
     public String enterPrompt(String promptText, int tokenLength) {
-        if (promptText == null || promptText.isEmpty()) {
-            return "Error: Prompt text cannot be empty.";
-        }
-
-        if (tokenLength <= 0) {
-            return "Error: Token length must be greater than 0.";
-        }
-
         if (remainingPrompts > 0) {
             remainingPrompts--;
             return "Prompt submitted successfully!\n" +
@@ -53,6 +48,7 @@ class PersonalPlan extends AiModule {
         }
     }
 
+    // toString method
     @Override
     public String toString() {
         return super.toString() + "\n" +

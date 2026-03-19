@@ -1,35 +1,31 @@
 package CourseWork;
 
+
 /**
- * Child Class: ProPlan
- * User plan with team slots to add/remove members.
+ * Write a description of class proPlan here.
+ *
+ * @author (your name)
+ * @version (a version number or a date)
  */
-class ProPlan extends AiModule {
-
-    private int availableSlots;
-
-    public ProPlan(String modelName, double price, int parameterCount, String contextWindow, int availableSlots) {
-        super(modelName, price, parameterCount, contextWindow);
-        this.availableSlots = availableSlots;
-    }
-
-    // Getter and Setter
-    public int getAvailableSlots() {
-        return availableSlots;
-    }
-
-    public void setAvailableSlots(int newAvailableSlots) {
-        if (newAvailableSlots >= 0) {
-            this.availableSlots = newAvailableSlots;
-        }
-    }
-
-    // Add team member
-    public String addTeamMember(String memberName) {
-        if (memberName == null || memberName.isEmpty()) {
-            return "Error: Member name cannot be empty.";
-        }
-
+// child Class
+public class ProPlan extends AiModule
+{
+     private int availableSlots;
+     public ProPlan(String modelName, double price, int parameterCount, String contextWindow, int availableSlots){
+         super( modelName, price, parameterCount, contextWindow);
+         this.availableSlots =availableSlots;
+     }
+     // gatter setter method 
+     public int getAvailableSlots(){
+         return availableSlots;
+     }
+     
+     public void setAvailanleSlots( int newAvailableSlots){
+         this.availableSlots= newAvailableSlots;
+     }
+     // method for Proplan user which can add member 
+     public String addTeamMember(String memberName) {
+         // if  availableSlots is greater than 0 than proplan user can add whithout Not
         if (availableSlots > 0) {
             availableSlots--;
             return "Team member '" + memberName + "' added successfully!\n" +
@@ -38,22 +34,18 @@ class ProPlan extends AiModule {
             return "Error: No available slots. Cannot add team member '" + memberName + "'.";
         }
     }
-
-    // Remove team member
+    // method for remove group member
     public String removeTeamMember(String memberName) {
-        if (memberName == null || memberName.isEmpty()) {
-            return "Error: Member name cannot be empty.";
-        }
-
         availableSlots++;
         return "Team member '" + memberName + "' removed successfully!\n" +
                "Available slots: " + availableSlots;
     }
-
+    // toString method
     @Override
     public String toString() {
         return super.toString() + "\n" +
                "Plan Type: Pro Plan\n" +
                "Available Team Slots: " + availableSlots;
     }
+    
 }
