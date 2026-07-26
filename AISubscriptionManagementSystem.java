@@ -1,7 +1,3 @@
-
- 
-
-
 import javax.swing.*;
 import javax.swing.border.*;
 import javax.swing.table.*;
@@ -270,7 +266,7 @@ public class AISubscriptionManagementSystem extends JFrame {
         return b;
     }
 
-    // ==================== CONTENT AREA ====================
+    //  CONTENT AREA 
     private JPanel buildContent() {
         cardLayout = new CardLayout();
         contentArea = new JPanel(cardLayout);
@@ -304,7 +300,7 @@ public class AISubscriptionManagementSystem extends JFrame {
         }
     }
 
-    // ==================== HOME PAGE ====================
+    // HOME PAGE 
     private JPanel buildHomePage() {
         JPanel p = makePage();
         p.add(makePageHeader("🏠 Home Dashboard", "Overview of all AI subscription plans"), BorderLayout.NORTH);
@@ -348,7 +344,6 @@ public class AISubscriptionManagementSystem extends JFrame {
     private void refreshHomeTable() {
         DefaultTableModel m = (DefaultTableModel) homeTable.getModel();
         m.setRowCount(0);
-        // Static sample data (no real logic)
         m.addRow(new Object[]{1, "Personal Plan", "GPT-4o", "2999.00", "175B", "128,000", "50,000", "—", "—"});
         m.addRow(new Object[]{2, "Personal Plan", "Gemini-2", "1999.00", "70B", "32,000", "30,000", "—", "—"});
         m.addRow(new Object[]{3, "Pro Plan", "Claude-3", "6999.00", "200B", "200,000", "150,000", "—", "—"});
@@ -356,7 +351,6 @@ public class AISubscriptionManagementSystem extends JFrame {
         m.addRow(new Object[]{5, "Team Plan", "Claude-3", "19999.00", "200B", "200,000", "500,000", "20", "0"});
     }
 
-    // ==================== ADD PLAN PAGE ====================
     private JPanel buildAddPlanPage() {
         JPanel p = makePage();
         p.add(makePageHeader("➕ Add New Plan", "Create a new AI subscription plan"), BorderLayout.NORTH);
@@ -435,8 +429,6 @@ public class AISubscriptionManagementSystem extends JFrame {
         extraFieldsPanel.revalidate();
         extraFieldsPanel.repaint();
     }
-
-    // ==================== OTHER PAGES (Static) ====================
     private JPanel buildPersonalPage() {
         JPanel p = makePage();
         p.add(makePageHeader("👤 Personal Plans", "Manage individual user subscriptions"), BorderLayout.NORTH);
@@ -726,8 +718,6 @@ public class AISubscriptionManagementSystem extends JFrame {
         gbc.gridx = 1; gbc.weightx = 0.72;
         panel.add(field, gbc);
     }
-
-    // ==================== MAIN ====================
     public static void main(String[] args) {
         try {
             UIManager.setLookAndFeel(UIManager.getSystemLookAndFeelClassName());

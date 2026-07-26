@@ -1,0 +1,8 @@
+[2026-05-09 20:56:06]
+PRO PLAN CREATED
+Model: Gemini-Ultra  |  Price: NPR 8999.0/mo  |  Tokens: Unlimited
+────────────────────────────────────────────────────────────
+[2026-05-13 08:58:22]
+PRO PLAN CREATED
+Model: GPT-4o  |  Price: NPR 7499.0/mo  |  Tokens: Unlimited
+────────────────────────────────────────────────────────────
