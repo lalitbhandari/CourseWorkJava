@@ -18,6 +18,9 @@ public class CLASS
         int d =(int) c;
         System.out.println(d);
         
+        int[] g={1,2,4,3,123,1213,43,24,24};
+        System.out.println(g);
+        
         
     }
 }
